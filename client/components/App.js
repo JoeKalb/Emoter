@@ -1,10 +1,10 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import About from './About.jsx';
-import Home from './Home.jsx';
-import Profile from './Profile.jsx';
+import About from './About.js';
+import Home from './Home.js';
+import Profile from './Profile.js';
 require("!style-loader!css-loader!sass-loader!../../sass/test.sass");
-//import Button from 'react-bootstrap/lib/Button';
+
 
 class App extends React.Component{
 	render() {
@@ -14,7 +14,7 @@ class App extends React.Component{
         		<li><Link to="/">Home</Link></li>
         		<li><Link to="/about">About</Link></li>
         		<li><Link to="/profile">Profile</Link></li>	
-            <input placeholder=" Search Artists"></input>
+            <input placeholder="Search Artists"></input>
       		</ul>
 
       		<hr/>

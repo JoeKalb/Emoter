@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './dev/index.jsx'
+    './client/index.js'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -18,9 +18,9 @@ module.exports = {
   module: {
     loaders: [
     {
-      test: /\.jsx$/,
+      test: /\.js$/,
       loaders: ['react-hot-loader', 'babel-loader'],
-      include: path.join(__dirname, 'dev')
+      include: path.join(__dirname, 'client')
     },
     {
       test: /\.sass$/,
