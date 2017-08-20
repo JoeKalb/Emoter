@@ -13,3 +13,10 @@ export function removeTodo(id){
 		id
 	}
 }
+
+export function login(info){
+	return {
+		type: 'LOGIN',
+		info
+	}
+}
