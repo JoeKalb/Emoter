@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack --config webpack.config.js",
     "dev": "webpack -d --watch",
-    "hot": "webpack-dev-server --inline --content-base"
+    "hot": "webpack-dev-server --inline --content-base",
+    "devServer": "node server.js"
   },
   "author": "joefish",
   "license": "ISC",
@@ -18,12 +19,13 @@
     "css-loader": "^0.28.4",
     "express": "^4.15.3",
     "react": "^15.5.4",
-    "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-hot-loader": "^1.3.1",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.2"
