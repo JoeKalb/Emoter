@@ -1,22 +1,29 @@
-import { createStore, compose } from 'redux';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { browserHistory } from 'react-router';
+import { createStore, compose, applyMiddleware } from 'redux';
+import { routerMiddleware } from 'react-router-redux';
+import { BrowserHistory } from 'react-router-dom';
 
 import rootReducer from './reducers/index';
 
+import todos from './data/todos';
+import users from './data/users';
+
+import createHistory from 'history/createBrowserHistory';
+
 // create an object for the default data
 const defaultState = {
-	profile,
-	todos
+	todos,
+	users
 };
 
 const enchancers = compose(
 	window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 
-const store = createStore(rootReducer, defaultState, enchancers);
+const middleware = routerMiddleware(history);
 
-export const history = syncHistoryWithStore(browserHistory, store);
+export const history = createHistory();
+
+const store = createStore(rootReducer, defaultState, applyMiddleware(middleware), enchancers);
 
 if(module.hot){
 	module.hot.accept('./reducers/', () => {

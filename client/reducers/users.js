@@ -1,10 +1,10 @@
-function profile(state = [], action){
+function users(state = [], action){
 	switch(action.type){
 		case 'LOGIN':
 			console.log('ajax call to twitch');
 			return [
 				...state, {
-					profile: action.info
+					users: action.info
 				}
 			];
 		default:
@@ -12,4 +12,4 @@ function profile(state = [], action){
 	}
 }
 
-export default profile;
+export default users;
