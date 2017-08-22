@@ -1,4 +1,14 @@
-ul
+body
+	display: flex
+	display: -webkit-flex
+
+#nav
+	position: fixed
+	display: block
+	width: 100%
+	top: 0
+
+#nav ul
 	list-style-type: none
 	margin: 0
 	padding: 0
@@ -9,29 +19,29 @@ ul
 	width: 100%
 	border-style: solid
 
-li
+#nav li
 	float: left
 
-li a
+#nav li a
 	display: block
 	color: white
 	text-align: center
 	padding: 14px 16px
 	text-decoration: none
 
-li a:hover:not(.active)
+#nav li a:hover:not(.active)
 	background-color: #1A2778
 	color: white
 
-li a:hover
+#nav li a:hover
 	text-decoration: none
 
-input
+#nav input
 	float: right
 	margin: 14px 16px 0px
 
 #container
-	padding: 6px 0px
+	margin-top: 54px
 
 .login
 	position: relative

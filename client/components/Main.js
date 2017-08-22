@@ -5,7 +5,7 @@ import Home from './Home';
 class Main extends React.Component{
 	render() {
 		return (
-			<div>
+			<div id="nav">
       		<ul>
         		<li><Link to="/">Home</Link></li>
         		<li><Link to="/about">About</Link></li>

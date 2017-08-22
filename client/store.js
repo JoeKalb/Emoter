@@ -15,15 +15,13 @@ const defaultState = {
 	users
 };
 
-const enchancers = compose(
-	window.devToolsExtension ? window.devToolsExtension() : f => f
-);
+const enchancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const middleware = routerMiddleware(history);
 
 export const history = createHistory();
 
-const store = createStore(rootReducer, defaultState, applyMiddleware(middleware), enchancers);
+const store = createStore(rootReducer, defaultState, enchancers(applyMiddleware(middleware)));
 
 if(module.hot){
 	module.hot.accept('./reducers/', () => {

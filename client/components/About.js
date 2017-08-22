@@ -4,10 +4,12 @@ import Main from './Main';
 class About extends React.Component {
 	render() {
 		return (
-			<div id="container">
+			<div>
 				<Main />
-				<h4>About</h4>
-				<p>This part should be changing real time!</p>
+				<div className="container">
+					<h4>About</h4>
+					<p>This part should be changing real time!</p>
+				</div>
 			</div>);
 	}
 } 

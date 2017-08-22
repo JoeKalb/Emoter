@@ -7,6 +7,7 @@ import About from './components/About';
 import App from './components/App';
 import Home from './components/Home';
 import Profile from './components/Profile';
+import Main from './components/Main';
 
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux'
@@ -17,7 +18,7 @@ const container = document.getElementById('container');
 const router = (
 	<Provider store={store}>
 		<ConnectedRouter history={history}>
-			<Switch>
+			<Switch component={App}>
 				<Route exact path="/" component={Home}></Route>
 				<Route path="/About" component={About}></Route>
 				<Route path="/Profile" component={Profile}></Route>
