@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-require("!style-loader!css-loader!sass-loader!../sass/test.sass");
+require("!style-loader!css-loader!sass-loader!../sass/default.sass");
 import { Route, Link, Switch } from 'react-router-dom';
 
 import About from './components/About';
@@ -13,7 +13,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux'
 import store, { history } from './store';
 
-const container = document.getElementById('container');
+const root = document.getElementById('root');
 
 const router = (
 	<Provider store={store}>
@@ -27,4 +27,4 @@ const router = (
 	</Provider>
 );
 
-render(router, container);
+render(router, root);
