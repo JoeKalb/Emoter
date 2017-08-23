@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from './Main';
+import ProfileDisplay from './ProfileDisplay'
 import CONFIG from '../../config.js';
 
 class Profile extends React.Component {
@@ -58,22 +59,21 @@ class Profile extends React.Component {
 		}).then((res) => {
 			return res.json();
 		}).then((data) => {
-			console.log(data);
 			this.setState({user: data});
-			return JSON.stringify(data);
+			console.log(this.state.user);
 		});
-		return promise;
 	}
 
 	render() {
 		const {user} = this.state;
+		
 		return (
 			<div>
 				<Main />
 				<div className="page">
-					<h4>Profile</h4>
-					<p>This is where the profiles will be!</p>
-					<pre></pre>
+					{this.state && user && 
+						<ProfileDisplay user={user} />
+					}
 				</div>
 			</div>
 		);
