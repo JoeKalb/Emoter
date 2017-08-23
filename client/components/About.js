@@ -6,7 +6,7 @@ class About extends React.Component {
 		return (
 			<div>
 				<Main />
-				<div className="container">
+				<div className="page">
 					<h4>About</h4>
 					<p>This part should be changing real time!</p>
 				</div>
