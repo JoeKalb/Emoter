@@ -9,15 +9,26 @@ class Main extends React.Component{
 		return (
 			<div id="nav">
       		<ul>
-        		<li><Link to="/about">About</Link></li>
-        		<li><Link to="/profile">Profile</Link></li>
+						<li><Link to="/profile">
+							<FontAwesome
+								name="home"
+							/>
+						</Link></li>
+        		<li><Link to="/about">
+							<FontAwesome
+								name="info"
+							/>
+						</Link></li>
 	          <li>
 							<div className="searchDiv">
 								<FontAwesome
 									name="search" /> <input type="text" placeholder="Search Artist"></input>
 							</div>
 						</li>
-						<li id="logout"><Link to="/">Logout</Link></li>
+						<li id="logout"><Link to="/">
+							<FontAwesome
+								name="sign-out"
+							/></Link></li>
       		</ul>
     	</div>
 		);
