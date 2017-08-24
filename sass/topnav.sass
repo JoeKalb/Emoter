@@ -26,14 +26,33 @@
 	text-align: center
 	padding: 14px 16px
 	text-decoration: none
+	font-family: $font
+
+#nav li .searchDiv
+	span, input
+		float: left
+		background: white
+		margin-top: 13px
+	input
+		padding-top: 2px
+		padding-bottom: 2px
+		border: none
+		font-family: $font
+	input:focus
+		outline: none
+	span
+		padding-top: 2px
+		padding-left: 2px
+		padding-bottom: 1px
+		padding-right: 5px
+		color: $nav-bg
 
 #nav li a:hover:not(.active)
-	background-color: darken($nav-bg, 20%)
-	color: white
+	color: darken(white, 20%)
+	text-decoration: underline
 
 #nav li a:hover
-	text-decoration: none
+	/*text-decoration: none
 
-#nav input
+#nav #logout
 	float: right
-	margin: 14px 16px 0px

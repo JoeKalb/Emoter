@@ -21,6 +21,23 @@ class ProfileDisplay extends React.Component{
 					</a>
 					<p>{user.bio}</p>
 				</div>
+				<div className="artInfoDiv">
+					<button id="commissions" className="animated pulse infinite">
+						Commissions <FontAwesome
+							className='super-crazy-colors'
+							name='thumbs-o-up'
+							size="lg"
+						/>
+						<FontAwesome
+							className='super-crazy-colors'
+							name='frown-o'
+							size="lg"
+						/>
+				</button>
+					<p>Type</p>
+					<p>Of</p>
+					<p>Art</p>
+				</div>
 			</div>
 		);
 	}

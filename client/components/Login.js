@@ -1,8 +1,8 @@
 import React from 'react';
 import Main from './Main';
 
-class Home extends React.Component {
-	
+class Login extends React.Component {
+
 	render() {
 		return (
 			<div>
@@ -14,4 +14,4 @@ class Home extends React.Component {
 	}
 };
 
-export default Home;
+export default Login;

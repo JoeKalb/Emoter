@@ -5,7 +5,7 @@ import { Route, Link, Switch } from 'react-router-dom';
 
 import About from './components/About';
 import App from './components/App';
-import Home from './components/Home';
+import Login from './components/Login';
 import Profile from './components/Profile';
 import Main from './components/Main';
 
@@ -19,7 +19,7 @@ const router = (
 	<Provider store={store}>
 		<ConnectedRouter history={history}>
 			<Switch component={App}>
-				<Route exact path="/" component={Home}></Route>
+				<Route exact path="/" component={Login}></Route>
 				<Route path="/About" component={About}></Route>
 				<Route path="/Profile" component={Profile}></Route>
 			</Switch>

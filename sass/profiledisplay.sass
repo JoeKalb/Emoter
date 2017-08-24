@@ -1,8 +1,10 @@
+@import 'variables'
+
 .profileDisplay
 	width: calc(100%-21px)
-	height: 130px
+	height: 100px
 	background: lighten(silver, 15%)
-	padding: 5px
+	padding: 10px
 
 .profileImage
 	float: left
@@ -11,3 +13,21 @@
 
 .profileInfo
 	float: left
+	margin: 5px
+
+p
+	font-family: $font
+
+.artInfoDiv
+	float: right
+	p
+		text-align: right
+
+#commissions
+	background: $success
+	color: white
+	padding: 8px
+	border-radius: 8px
+	border: none
+	&:hover
+		background: darken($success, 5%)
