@@ -1,6 +1,7 @@
 import React from 'react';
 import Main from './Main';
-import ProfileDisplay from './ProfileDisplay'
+import ProfileDisplay from './ProfileDisplay';
+import TodoList from './TodoList';
 import CONFIG from '../../config.js';
 
 class Profile extends React.Component {
@@ -18,7 +19,7 @@ class Profile extends React.Component {
 	componentWillMount(){
 		this.getInfo(this.getCodeFromURL());
 	}
-	
+
 	getInfo(code) {
 		let call = 'https://api.twitch.tv/kraken/oauth2/token?client_id={client_ID}&client_secret={client_secret}&code={code}&grant_type=authorization_code&redirect_uri={redirect}';
 		call = call.replace('{client_ID}', CONFIG.client_id)
@@ -66,18 +67,19 @@ class Profile extends React.Component {
 
 	render() {
 		const {user} = this.state;
-		
+
 		return (
 			<div>
 				<Main />
 				<div className="page">
-					{this.state && user && 
+					{this.state && user &&
 						<ProfileDisplay user={user} />
 					}
+					<TodoList />
 				</div>
 			</div>
 		);
 	}
-} 
+}
 
 export default Profile;

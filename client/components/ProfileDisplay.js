@@ -23,12 +23,11 @@ class ProfileDisplay extends React.Component{
 				</div>
 				<div className="artInfoDiv">
 					<button id="commissions" className="animated pulse infinite">
-						Commissions <FontAwesome
+						<FontAwesome
 							className='super-crazy-colors'
 							name='thumbs-o-up'
 							size="lg"
-						/>
-						<FontAwesome
+						/> <FontAwesome
 							className='super-crazy-colors'
 							name='frown-o'
 							size="lg"
