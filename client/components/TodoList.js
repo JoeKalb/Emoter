@@ -13,7 +13,6 @@ class TodoList extends React.Component{
   item(todo){
     return (
       <li key={todo.id} value={todo.completed}>
-        <FontAwesome name="twitch"/>
         <div>
           {todo.completed ?
           <FontAwesome
