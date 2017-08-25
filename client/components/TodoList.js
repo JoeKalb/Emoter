@@ -1,5 +1,6 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
+require("!style-loader!css-loader!sass-loader!../../sass/todoList.sass");
 
 class TodoList extends React.Component{
   constructor(props){
@@ -10,19 +11,33 @@ class TodoList extends React.Component{
   }
 
   item(todo){
-    return <li key={todo.id}>{todo.title}</li>
+    return (
+      <li key={todo.id} value={todo.completed}>
+        <FontAwesome name="twitch"/>
+        <div>
+          {todo.completed ?
+          <FontAwesome
+            name="check"
+            className="icon"
+          /> : <FontAwesome
+            name="ellipsis-h"
+            className="icon"
+          />}
+        </div>
+        <div>{todo.title}</div>
+      </li>
+    );
   }
 
   handleClick(){
     this.setState(prevState => ({
       toggleList: !prevState.toggleList
     }));
-    console.log(this.state.toggleList);
   }
 
   render () {
     return (
-      <div>
+      <div className="todoDiv">
         <h5>This will be the twitch name: {this.props.user}
           <button>
             <FontAwesome

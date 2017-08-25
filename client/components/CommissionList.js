@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import TodoList from './TodoList';
 import todos from '../data/todos'; // replaced with api call later
-require("!style-loader!css-loader!sass-loader!../../sass/todoList.sass");
+require("!style-loader!css-loader!sass-loader!../../sass/commissionList.sass");
 
 class CommissionList extends React.Component {
   constructor(props){
