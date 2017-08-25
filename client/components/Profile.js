@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from './Main';
 import ProfileDisplay from './ProfileDisplay';
-import TodoList from './TodoList';
+import CommissionList from './CommissionList';
 import CONFIG from '../../config.js';
 
 class Profile extends React.Component {
@@ -75,7 +75,7 @@ class Profile extends React.Component {
 					{this.state && user &&
 						<ProfileDisplay user={user} />
 					}
-					<TodoList />
+					<CommissionList />
 				</div>
 			</div>
 		);

@@ -1,30 +1,47 @@
-var React = require('react');
-import todos from '../data/todos';
-require("!style-loader!css-loader!sass-loader!../../sass/todoList.sass");
+import React from 'react';
+import FontAwesome from 'react-fontawesome';
 
-class TodoList extends React.Component {
+class TodoList extends React.Component{
   constructor(props){
     super(props);
-    this.state = { todos: todos.filter((item) => {
-      if(item.userId == 1) return item;
-    }, []) };
-
-    this.displayTodos = this.displayTodos.bind(this);
+    this.state = { toggleList: false }
+    this.item = this.item.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  displayTodos(todo){
-    return <li key={todo.id} value={todo.completed}>{todo.title}</li>;
+  item(todo){
+    return <li key={todo.id}>{todo.title}</li>
   }
 
-  render() {
+  handleClick(){
+    this.setState(prevState => ({
+      toggleList: !prevState.toggleList
+    }));
+    console.log(this.state.toggleList);
+  }
+
+  render () {
     return (
       <div>
-        <ul>
-          {this.state.todos.map(this.displayTodos)}
-        </ul>
+        <h5>This will be the twitch name: {this.props.user}
+          <button>
+            <FontAwesome
+            name="caret-down"
+            onClick={this.handleClick}
+            />
+          </button>
+          <button>
+            <FontAwesome
+            name="comments"
+            />
+          </button>
+        </h5>
+        {this.state.toggleList ? <ul>
+          {this.props.todos.map(this.item)}
+        </ul> : null}
       </div>
-    );
+    )
   }
 }
 
-module.exports = TodoList;
+export default TodoList;
