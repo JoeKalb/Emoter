@@ -14,12 +14,26 @@ class Profile extends React.Component {
 		this.getCodeFromURL = this.getCodeFromURL.bind(this);
 		this.getInfo = this.getInfo.bind(this);
 		this.allUserInfo = this.allUserInfo.bind(this);
+		this.localOauthCall = this.localOauthCall.bind(this);
 	}
 
 	componentWillMount(){
-		this.getInfo(this.getCodeFromURL());
+		//this.getInfo(this.getCodeFromURL());
+		this.localOauthCall(this.getCodeFromURL());
 	}
 
+	localOauthCall(code) {
+		const localCall = 'http://localhost:3000/api/v1/twitch/' + code;
+		console.log("Making call to: " + localCall);
+		let promise = fetch(localCall, {
+			method: "GET"
+		}).then((res) => {
+			res.json();
+		}).then((data) => {
+			this.setState({ token: data});
+			this.allUserInfo();
+		})
+	}
 	getInfo(code) {
 		let call = 'https://api.twitch.tv/kraken/oauth2/token?client_id={client_ID}&client_secret={client_secret}&code={code}&grant_type=authorization_code&redirect_uri={redirect}';
 		call = call.replace('{client_ID}', CONFIG.client_id)
