@@ -18,21 +18,12 @@ class Profile extends React.Component {
 	}
 
 	componentWillMount(){
-		//this.getInfo(this.getCodeFromURL());
-		this.localOauthCall(this.getCodeFromURL());
+		this.getInfo(this.getCodeFromURL());
 	}
 
 	localOauthCall(code) {
-		const localCall = 'http://localhost:3000/api/v1/twitch/' + code;
-		console.log("Making call to: " + localCall);
-		let promise = fetch(localCall, {
-			method: "GET"
-		}).then((res) => {
-			res.json();
-		}).then((data) => {
-			this.setState({ token: data});
-			this.allUserInfo();
-		})
+		// calling from wrong place and getting unauthorized
+		// should look like "this.allUserInfo() in the server side"
 	}
 	getInfo(code) {
 		let call = 'https://api.twitch.tv/kraken/oauth2/token?client_id={client_ID}&client_secret={client_secret}&code={code}&grant_type=authorization_code&redirect_uri={redirect}';
