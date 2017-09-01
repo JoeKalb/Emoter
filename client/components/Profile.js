@@ -15,16 +15,29 @@ class Profile extends React.Component {
 		this.getInfo = this.getInfo.bind(this);
 		this.allUserInfo = this.allUserInfo.bind(this);
 		this.localOauthCall = this.localOauthCall.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	componentWillMount(){
-		this.getInfo(this.getCodeFromURL());
+		//this.getInfo(this.getCodeFromURL()); // use for front end only
+		this.localOauthCall(this.getCodeFromURL());
 	}
 
 	localOauthCall(code) {
-		// calling from wrong place and getting unauthorized
-		// should look like "this.allUserInfo() in the server side"
+		let url = 'http://localhost:3000/api/v1/twitch/' + code;
+		let promise = fetch(url, {
+			method: "GET"
+		}).then((res) => {
+			return res.json()
+		}).then((data) => {
+			console.log(data);
+			this.setState({ tokens: data });
+			this.allUserInfo();
+		}).catch((err) => {
+			console.log(err);
+		})
 	}
+
 	getInfo(code) {
 		let call = 'https://api.twitch.tv/kraken/oauth2/token?client_id={client_ID}&client_secret={client_secret}&code={code}&grant_type=authorization_code&redirect_uri={redirect}';
 		call = call.replace('{client_ID}', CONFIG.client_id)
@@ -68,6 +81,11 @@ class Profile extends React.Component {
 			this.setState({user: data});
 			console.log(this.state.user);
 		});
+	}
+
+	handleClick(){
+		console.log('clicked');
+		this.localOauthCall(this.getCodeFromURL());
 	}
 
 	render() {
