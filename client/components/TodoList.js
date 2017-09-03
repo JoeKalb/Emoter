@@ -19,7 +19,7 @@ class TodoList extends React.Component{
             name="check"
             className="icon"
           /> : <FontAwesome
-            name="ellipsis-h"
+            name="pencil"
             className="icon"
           />}
         </div>
