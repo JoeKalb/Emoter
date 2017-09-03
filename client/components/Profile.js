@@ -25,6 +25,7 @@ class Profile extends React.Component {
 
 	localOauthCall(code) {
 		let url = 'http://localhost:3000/api/v1/twitch/' + code;
+		console.log(code);
 		let promise = fetch(url, {
 			method: "GET"
 		}).then((res) => {
@@ -55,7 +56,7 @@ class Profile extends React.Component {
 	}
 
 	getCodeFromURL() {
-		let path = window.location.href.replace('http://localhost:3001/profile?', '');
+		let path = window.location.href.replace(CONFIG.redirect_uri + '?', '');
 		let info = path.split('&');
 		let mapped = info.map((item) => {
 			let pair = item.split('=');

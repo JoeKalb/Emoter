@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from './Main';
+import CONFIG from '../../config.js';
 
 class Login extends React.Component {
 
