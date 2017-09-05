@@ -4,19 +4,24 @@
 	padding: 0
 	margin: 0
 
-.page
-	margin-top: 40px
-
 .login
-	position: relative
-	padding-top: 50px
-
-a
-	text-decoration: none
-	font-family: $font
-
-a:hover:not(.active)
-	color: purple
-
-a:visited
-	color: black
+	position: fixed
+	display: grid
+	align-items: center
+	justify-items: center
+	height: 100%
+	width: 100%
+	background: lighten($palette-1, 10)
+	button
+		font-family: $font
+		font-size: 1em
+		border: 50%
+		border-style: none
+		border-radius: 5px
+		background: $twitch
+		color: $palette-1
+		padding: 2em
+		&:hover
+			cursor: pointer
+			background: darken($twitch, 15)
+			box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17)
