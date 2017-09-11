@@ -1,22 +1,7 @@
-// Add todo item
-export function addTodo(text){
+// ASYNC calls
+export function getTwitchUser(token) {
 	return {
-		type: 'ADD_TODO',
-		text
-	}
-}
-
-// Remove todo item
-export function removeTodo(id){
-	return {
-		type: 'REMOVE_TODO',
-		id
-	}
-}
-
-export function login(info){
-	return {
-		type: 'LOGIN',
-		info
+		type: user,
+		status: success
 	}
 }
