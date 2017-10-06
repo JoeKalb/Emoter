@@ -10,7 +10,7 @@ import Profile from './components/Profile';
 import Main from './components/Main';
 
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux'
+import { ConnectedRouter } from 'react-router-redux';
 import store, { history } from './store';
 
 const root = document.getElementById('root');
